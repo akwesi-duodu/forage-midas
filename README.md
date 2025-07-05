@@ -1,5 +1,6 @@
 # Midas
 Project repo for the JPMC Advanced Software Engineering Forage program
+
 Activity Overviews:
 Your team has been asked to build out the Midas system, a high-profile, high-stakes project which is sure to attract the right kind of attention if you can pull it off. In other words, doing well on this project would be an excellent career move. The Midas system architecture has already been nailed down, and tasking has been distributed to the various members of your team. You will be working on Midas Core - the component which receives, validates, and records financial transactions. This component depends on quite a few external resources - Kafka to receive new transactions, a SQL database to record and validate them, and a REST API to incentivize them. Your job over the course of this program will be to integrate all of these disparate resources into the final system.
 
