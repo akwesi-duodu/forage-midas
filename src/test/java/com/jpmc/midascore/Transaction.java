@@ -1,6 +1,12 @@
-package com.jpmc.midascore.foundation;
+package com.jpmc.midascore;
+
+import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.jpmc.midascore.Transaction;
+
+import jakarta.transaction.Transactional;
+
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Transaction {
@@ -32,6 +38,12 @@ public class Transaction {
     public void setRecipientId(long recipientId) {
         this.recipientId = recipientId;
     }
+        private double incentiveAmount;
+
+    //getter and setter
+    public double getIncentiveAmount() { return incentiveAmount; }
+    public void setIncentiveAmount(double incentiveAmount) { this.incentiveAmount = incentiveAmount; }
+
 
     public float getAmount() {
         return amount;
@@ -45,4 +57,12 @@ public class Transaction {
     public String toString() {
         return "Transaction {senderId=" + senderId + ", recipientId=" + recipientId + ", amount=" + amount + "}";
     }
+    @Service
+@Transactional
+public class TransactionProcessor {
+
+    public TransactionProcessor(UserRepository userRepository, IncentiveService incentiveService) {
+       // this.userRepository = userRepository;
+        //this.incentiveService = incentiveService;
+    }}
 }
